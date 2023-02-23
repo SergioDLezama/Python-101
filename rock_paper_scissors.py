@@ -1,11 +1,23 @@
+import random
 '''
 El proyecto es hacer un juego de consola de 
 Piedra, Papel o Tijera
+
+Cap 28 anadi tuplas al proyecto y random
 '''
 
-user_option = input('Piedra, papel o tijera?: ').lower()
-# Por ahora la computadora tendra una opcion fija
-computer_option = 'papel'
+jumpline = '\n'
+options = ('piedra', 'papel', 'tijera')
+user_option = input('\nPiedra, papel o tijera?: ').lower()
+computer_option = random.choice(options)
+
+# Esta linea confirma que el user de una de las opciones posibles
+if not user_option in options:
+  print('\nEsa opcion no es valida')
+
+print(jumpline ,'User options: ', user_option.title())
+print('Computer uption: ', computer_option.title(), jumpline)
+
 
 if user_option == computer_option:
   print(f'"{user_option.upper()}", Empate!!')
